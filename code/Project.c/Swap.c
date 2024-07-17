@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int i,j,arr[4][4],t;
+int main()
+{
+    system("cls");
+    arr[0][0]=2;
+    arr[0][1]=5;
+    arr[0][2]=8;
+    arr[0][3]=12;
+    arr[1][0]=6;
+    arr[1][1]=9;
+    arr[1][2]=11;
+    arr[1][3]=4;
+    arr[2][0]=10;
+    arr[2][1]=3;
+    arr[2][2]=7;
+    arr[2][3]=15;
+    arr[3][0]=0;
+    arr[3][1]=13;
+    arr[3][2]=1;
+    arr[3][3]=14;
+    for(i=0;i<4;i++)
+    {
+        for(j=0;j<4;j++)
+        {
+            printf("| %d\t|",arr[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    for(i=0;i<4;i++)
+    {
+        for(j=0;j<4;j++)
+        {
+            if(arr[i][j]==0)
+            {
+                t=arr[i][j];
+                arr[i][j]=arr[i-1][j];
+                arr[i-1][j]=t;
+            }
+        }
+    }
+    for(i=0;i<4;i++)
+    {
+        for(j=0;j<4;j++)
+        {
+            printf("| %d\t|",arr[i][j]);
+        }
+        printf("\n");
+    }
+}
